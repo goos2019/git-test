@@ -1,0 +1,32 @@
+import sys
+
+get_num = int(sys.stdin.readline().rstrip())
+
+for value in range(get_num):
+
+    get_sentence = sys.stdin.readline().rstrip()
+    get_word = get_sentence.split(" ")
+
+    if len(get_sentence) <= 1000 :
+
+        max_word_len = True
+
+        print_str = []
+
+        for data in get_word:
+
+            str_temp = ''
+
+            data_len = len(data)
+
+            if data_len > 20: max_word_len = False
+
+            for idx in range(data_len):
+
+                now_idx = -(idx) - 1
+
+                str_temp += data[now_idx]
+
+            print_str.append(str_temp)
+
+        if max_word_len: print(" ".join(print_str))
